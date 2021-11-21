@@ -1,6 +1,6 @@
 # metrik2019_flutter
 
-A new Flutter project.
+A revamped Metrik 2019 app built with Flutter.
 
 ## Getting Started
 
