@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metrik2019_flutter/ui/login_page.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -35,7 +36,11 @@ class LandingPage extends StatelessWidget {
                     primary: Color(0xfff5a623),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30))),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return LoginPage();
+                  }));
+                },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
