@@ -13,6 +13,9 @@ class LandingPage extends StatelessWidget {
               fit: BoxFit.fitHeight,
             )),
         Container(
+          color: Colors.black.withOpacity(0.1),
+        ),
+        Container(
           alignment: Alignment.topCenter,
           margin: EdgeInsets.only(top: 170),
           child: Material(
