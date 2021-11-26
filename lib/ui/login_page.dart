@@ -84,6 +84,7 @@ class LoginPage extends StatelessWidget {
                         style:
                             ElevatedButton.styleFrom(primary: Colors.transparent, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
                         onPressed: () {
+                          //Navigate to home page
                           Navigator.push(context, MaterialPageRoute(builder: (context) {
                             return HomePage();
                           }));
