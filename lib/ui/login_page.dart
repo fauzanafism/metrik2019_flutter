@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metrik2019_flutter/ui/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   TextEditingController idController = TextEditingController();
@@ -82,7 +83,11 @@ class LoginPage extends StatelessWidget {
                     child: ElevatedButton(
                         style:
                             ElevatedButton.styleFrom(primary: Colors.transparent, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return HomePage();
+                          }));
+                        },
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: Text(
