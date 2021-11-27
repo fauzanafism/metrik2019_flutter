@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metrik2019_flutter/widgets/soal.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
 class GuidancePage extends StatelessWidget {
@@ -39,7 +40,11 @@ class GuidancePage extends StatelessWidget {
               ],
             ),
             Spacer(),
-            GradientButton(onPressed: () {}, text: 'Next'),
+            GradientButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return SoalPage();
+              }));
+            }, text: 'Next'),
             SizedBox(height: 50,)
           ],
         ),
