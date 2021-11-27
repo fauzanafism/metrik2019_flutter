@@ -37,3 +37,33 @@ class GradientButton extends StatelessWidget {
     );
   }
 }
+
+class OptionButton extends StatelessWidget {
+  final VoidCallback onPressed;
+  final String text;
+
+  OptionButton({required this.onPressed, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 110,
+      height: 110,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          
+          borderRadius: BorderRadius.circular(20)),
+      child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            onPrimary: Color(0xFF181335),
+              primary: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20))),
+          onPressed: onPressed,
+          child: Text(
+            text,
+            style: whiteTextMont.copyWith(fontSize: 45, color: Colors.black),
+          )),
+    );
+  }
+}
