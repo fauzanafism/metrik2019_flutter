@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metrik2019_flutter/ui/guidance_page.dart';
+import 'package:metrik2019_flutter/widgets/style.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -18,6 +19,7 @@ class HomePage extends StatelessWidget {
             children: [
               Container(
                 constraints: BoxConstraints.expand(),
+                margin: EdgeInsets.only(top: 30),
                 child: Image(
                   image: AssetImage('assets/images/hello_user.png'),
                   fit: BoxFit.cover,
@@ -25,7 +27,7 @@ class HomePage extends StatelessWidget {
               ),
               Container(
                 height: 37,
-                margin: EdgeInsets.fromLTRB(155, 90, 65, 0),
+                margin: EdgeInsets.fromLTRB(155, 120, 65, 0),
                 child: Text("G2-0062",
                     style: TextStyle(
                         color: Colors.white, fontFamily: "Adam", fontSize: 39, fontWeight: FontWeight.bold)),
@@ -46,10 +48,7 @@ class HomePage extends StatelessWidget {
                       onPressed: () {},
                       child: Text(
                         "Uji Coba",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Adam",
-                            color: Colors.black),
+                        style: whiteTextMont.copyWith(color: Colors.black),
                       )),
                 ),
                 SizedBox(
@@ -65,10 +64,7 @@ class HomePage extends StatelessWidget {
                         }));
                       },
                       child: Text("Penyisihan",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                              fontFamily: "Adam",
-                              color: Colors.black))),
+                          style:whiteTextMont.copyWith(color: Colors.black))),
                 ),
               ],
             ),

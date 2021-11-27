@@ -21,6 +21,7 @@ class LoginPage extends StatelessWidget {
           ),
           Container(
             constraints: BoxConstraints.expand(),
+            margin: EdgeInsets.only(top: 30),
             child: Image(
               image: AssetImage('assets/images/metrik_login.png'),
               fit: BoxFit.cover,
@@ -28,7 +29,7 @@ class LoginPage extends StatelessWidget {
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 70),
+              padding: const EdgeInsets.only(bottom: 70, top: 40),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
