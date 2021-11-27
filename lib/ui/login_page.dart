@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metrik2019_flutter/ui/home_page.dart';
+import 'package:metrik2019_flutter/widgets/style.dart';
 
 class LoginPage extends StatelessWidget {
   TextEditingController idController = TextEditingController();
@@ -58,7 +59,6 @@ class LoginPage extends StatelessWidget {
                     height: 50,
                     child: TextField(
                       obscureText: true,
-
                       controller: passController,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -71,33 +71,11 @@ class LoginPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Color(0xFF181335), Color(0xFFBD0446)],
-                        begin: FractionalOffset.topLeft,
-                        end: FractionalOffset.bottomRight,
-                      ),
-                      borderRadius: BorderRadius.circular(30)
-                    ),
-                    child: ElevatedButton(
-                        style:
-                            ElevatedButton.styleFrom(primary: Colors.transparent, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
-                        onPressed: () {
-                          //Navigate to home page
-                          Navigator.push(context, MaterialPageRoute(builder: (context) {
-                            return HomePage();
-                          }));
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Text(
-                            "Masuk",
-                            style: TextStyle(
-                                fontFamily: "Montserrat", color: Colors.white, fontWeight: FontWeight.bold),
-                          ),
-                        )),
-                  )
+                  GradientButton(onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return HomePage();
+                    }));
+                  }, text: 'Masuk')
                 ],
               ),
             ),

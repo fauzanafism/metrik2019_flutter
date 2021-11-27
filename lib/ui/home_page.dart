@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metrik2019_flutter/ui/guidance_page.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -58,7 +59,11 @@ class HomePage extends StatelessWidget {
                           primary: Colors.white,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30))),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return GuidancePage();
+                        }));
+                      },
                       child: Text("Penyisihan",
                           style: TextStyle(
                               fontWeight: FontWeight.w900,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metrik2019_flutter/ui/login_page.dart';
+import 'package:metrik2019_flutter/widgets/style.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -36,7 +37,7 @@ class LandingPage extends StatelessWidget {
             margin: EdgeInsets.only(top: 100),
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    primary: Color(0xfff5a623),
+                    primary: mainColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30))),
                 onPressed: () {
