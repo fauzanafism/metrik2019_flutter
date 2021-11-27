@@ -18,6 +18,8 @@ class GradientButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 120,
+      height: 40,
       decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Color(0xFF181335), Color(0xFFBD0446)],
@@ -28,12 +30,9 @@ class GradientButton extends StatelessWidget {
       child: ElevatedButton(
           style: blackButton,
           onPressed: onPressed,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              text,
-              style: whiteTextMont,
-            ),
+          child: Text(
+            text,
+            style: whiteTextMont,
           )),
     );
   }
