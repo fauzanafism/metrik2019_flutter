@@ -10,10 +10,10 @@ TextStyle whiteTextMont = TextStyle(
 Color mainColor = Color(0xfff5a623);
 
 class GradientButton extends StatelessWidget {
-  final VoidCallback function;
+  final VoidCallback onPressed;
   final String text;
 
-  GradientButton({required this.function, required this.text});
+  GradientButton({required this.onPressed, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class GradientButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(30)),
       child: ElevatedButton(
           style: blackButton,
-          onPressed: function,
+          onPressed: onPressed,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
