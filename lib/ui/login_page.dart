@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:metrik2019_flutter/bloc/viewpass_bloc.dart';
 import 'package:metrik2019_flutter/ui/home_page.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
@@ -58,25 +60,41 @@ class LoginPage extends StatelessWidget {
                         color: Colors.white),
                     width: 300,
                     height: 50,
-                    child: TextField(
-                      obscureText: true,
-                      controller: passController,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
-                              borderRadius: BorderRadius.circular(30)),
-                          hintText: "Password",
-                          hintStyle: TextStyle(fontFamily: "Montserrat")),
+                    child: BlocBuilder<ViewpassBloc, ViewpassState>(
+                      builder: (context, state) {
+                        return TextField(
+                          obscureText: state.isSecure,
+                          controller: passController,
+                          decoration: InputDecoration(
+                              suffixIcon: GestureDetector(
+                                  onTap: () {
+                                    context
+                                        .read<ViewpassBloc>()
+                                        .add(TapEvent());
+                                  },
+                                  child: (state.isSecure)
+                                      ? Icon(Icons.visibility_off)
+                                      : Icon(Icons.visibility)),
+                              border: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(30)),
+                              hintText: "Password",
+                              hintStyle: TextStyle(fontFamily: "Montserrat")),
+                        );
+                      },
                     ),
                   ),
                   SizedBox(
                     height: 20,
                   ),
-                  GradientButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return HomePage();
-                    }));
-                  }, text: 'Masuk')
+                  GradientButton(
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return HomePage();
+                        }));
+                      },
+                      text: 'Masuk'),
                 ],
               ),
             ),
