@@ -6,7 +6,7 @@ part 'viewpass_state.dart';
 class ViewpassBloc extends Bloc<ViewpassEvent, ViewpassState> {
   ViewpassBloc() : super(ViewpassInitial()) {
     on<TapEvent>((event, emit) {
-      emit(ViewpassTapped(state.isOpen == !state.isOpen));
+      emit(ViewpassTapped(!state.isSecure));
     });
   }
 }
