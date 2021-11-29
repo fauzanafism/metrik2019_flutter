@@ -50,19 +50,22 @@ class OptionButton extends StatelessWidget {
       width: 110,
       height: 110,
       decoration: BoxDecoration(
-          color: Colors.white,
-          
-          borderRadius: BorderRadius.circular(20)),
+          color: Colors.white, borderRadius: BorderRadius.circular(20)),
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            onPrimary: Color(0xFF181335),
+              onPrimary: Color(0xFF181335),
               primary: Colors.white,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20))),
           onPressed: onPressed,
           child: Text(
             text,
-            style: whiteTextMont.copyWith(fontSize: 45, color: Colors.black),
+            style: whiteTextMont.copyWith(
+                fontSize: 45,
+                color: Colors.black,
+                shadows: [
+                  Shadow(color: Colors.black.withOpacity(0.3), blurRadius: 15, offset: Offset(0,10))
+                ]),
           )),
     );
   }
