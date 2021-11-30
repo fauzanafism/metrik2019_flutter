@@ -28,12 +28,28 @@ class SoalPage extends StatelessWidget {
                     Material(
                       color: Colors.transparent,
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text("Peringatan"),
+                                  content:
+                                      Text("Kosongkan jawaban ini?"),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {}, child: Text("Iya")),
+                                    TextButton(
+                                        onPressed: () {}, child: Text("Tidak"))
+                                  ],
+                                );
+                              });
+                        },
                         child: Container(
                             width: 135,
                             child: Image(
-                                image:
-                                    AssetImage("assets/images/button_skip.png"))),
+                                image: AssetImage(
+                                    "assets/images/button_skip.png"))),
                       ),
                     )
                   ],
