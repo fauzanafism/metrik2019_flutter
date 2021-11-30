@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metrik2019_flutter/ui/answer_page.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
 class SoalPage extends StatelessWidget {
@@ -38,7 +39,11 @@ class SoalPage extends StatelessWidget {
                                       Text("Kosongkan jawaban ini?"),
                                   actions: [
                                     TextButton(
-                                        onPressed: () {}, child: Text("Iya")),
+                                        onPressed: () {
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                            return AnswerPage();
+                                          }));
+                                        }, child: Text("Iya")),
                                     TextButton(
                                         onPressed: () {
                                           Navigator.pop(context);
