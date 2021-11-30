@@ -44,8 +44,8 @@ class SoalPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    OptionButton(onPressed: () {}, text: "a"),
-                    OptionButton(onPressed: () {}, text: "b"),
+                    OptionButton(text: "a"),
+                    OptionButton(text: "b"),
                   ],
                 ),
                 SizedBox(
@@ -54,8 +54,8 @@ class SoalPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    OptionButton(onPressed: () {}, text: "c"),
-                    OptionButton(onPressed: () {}, text: "d"),
+                    OptionButton(text: "c"),
+                    OptionButton(text: "d"),
                   ],
                 ),
                 Spacer()
