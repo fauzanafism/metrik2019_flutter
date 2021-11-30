@@ -18,12 +18,15 @@ class LandingPage extends StatelessWidget {
         ),
         Container(
           alignment: Alignment.topCenter,
-          margin: EdgeInsets.only(top: 170),
+          margin: const EdgeInsets.only(top: 170),
           child: Material(
             color: Colors.transparent,
-            child: Text(
+            child: const Text(
               "welcome to",
-              style: TextStyle(fontSize: 12, fontFamily: "Montserrat", color: Color(0xfff5a623)),
+              style: TextStyle(
+                  fontSize: 12,
+                  fontFamily: "Montserrat",
+                  color: Color(0xfff5a623)),
             ),
           ),
         ),
@@ -34,14 +37,14 @@ class LandingPage extends StatelessWidget {
         ),
         Center(
           child: Container(
-            margin: EdgeInsets.only(top: 100),
+            margin: const EdgeInsets.only(top: 100),
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     primary: mainColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30))),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return LoginPage();
                   }));
                 },
@@ -49,10 +52,7 @@ class LandingPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
                     "START",
-                    style: TextStyle(
-                        fontFamily: "Montserrat",
-                        color: Colors.black,
-                        fontWeight: FontWeight.w900),
+                    style: whiteTextMont.copyWith(color: Colors.black),
                   ),
                 )),
           ),
