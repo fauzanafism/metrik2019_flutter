@@ -40,7 +40,9 @@ class SoalPage extends StatelessWidget {
                                     TextButton(
                                         onPressed: () {}, child: Text("Iya")),
                                     TextButton(
-                                        onPressed: () {}, child: Text("Tidak"))
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        }, child: Text("Tidak"))
                                   ],
                                 );
                               });

@@ -63,7 +63,9 @@ class OptionButton extends StatelessWidget {
                 content: Text("Pilih '$text' sebagai jawabanmu?"),
                 actions: [
                   TextButton(onPressed: () {}, child: Text("Iya")),
-                  TextButton(onPressed: () {}, child: Text("Tidak"))
+                  TextButton(onPressed: () {
+                    Navigator.pop(context);
+                  }, child: Text("Tidak"))
                 ],
               );
             });
