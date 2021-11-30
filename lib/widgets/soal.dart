@@ -28,9 +28,7 @@ class SoalPage extends StatelessWidget {
                     Material(
                       color: Colors.transparent,
                       child: InkWell(
-                        onTap: () {
-                          print('tapped');
-                        },
+                        onTap: () {},
                         child: Container(
                             width: 135,
                             child: Image(
