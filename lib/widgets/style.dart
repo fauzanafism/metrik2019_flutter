@@ -39,10 +39,9 @@ class GradientButton extends StatelessWidget {
 }
 
 class OptionButton extends StatelessWidget {
-  final VoidCallback onPressed;
   final String text;
 
-  OptionButton({required this.onPressed, required this.text});
+  OptionButton({required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +56,18 @@ class OptionButton extends StatelessWidget {
               primary: Colors.white,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20))),
-          onPressed: onPressed,
+          onPressed: () {
+            showDialog(context: context, builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text("Peringatan"),
+                content: Text("Pilih '$text' sebagai jawabanmu?"),
+                actions: [
+                  TextButton(onPressed: () {}, child: Text("Iya")),
+                  TextButton(onPressed: () {}, child: Text("Tidak"))
+                ],
+              );
+            });
+          },
           child: Text(
             text,
             style: whiteTextMont.copyWith(
