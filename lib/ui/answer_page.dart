@@ -20,12 +20,18 @@ class AnswerPage extends StatelessWidget {
             Spacer(),
             ElevatedButton(
               onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Jawaban berhasil diinput")));
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return HomePage();
                 }));
               },
-              child: Text("SELESAI", style: whiteTextMont.copyWith(color: Colors.black),),
-              style: blackButton.copyWith(backgroundColor: MaterialStateProperty.all(Colors.white)),
+              child: Text(
+                "SELESAI",
+                style: whiteTextMont.copyWith(color: Colors.black),
+              ),
+              style: blackButton.copyWith(
+                  backgroundColor: MaterialStateProperty.all(Colors.white)),
             )
           ],
         ),
