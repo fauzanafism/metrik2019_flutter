@@ -30,7 +30,10 @@ class HomePage extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(155, 120, 65, 0),
                 child: Text("G2-0062",
                     style: TextStyle(
-                        color: Colors.white, fontFamily: "Adam", fontSize: 39, fontWeight: FontWeight.bold)),
+                        color: Colors.white,
+                        fontFamily: "Adam",
+                        fontSize: 39,
+                        fontWeight: FontWeight.bold)),
               )
             ],
           ),
@@ -59,12 +62,13 @@ class HomePage extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30))),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
                           return GuidancePage();
                         }));
                       },
                       child: Text("Penyisihan",
-                          style:whiteTextMont.copyWith(color: Colors.black))),
+                          style: whiteTextMont.copyWith(color: Colors.black))),
                 ),
               ],
             ),
