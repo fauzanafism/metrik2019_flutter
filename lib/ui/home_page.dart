@@ -26,14 +26,19 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 37,
-                margin: EdgeInsets.fromLTRB(155, 120, 65, 0),
-                child: Text("G2-0062",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: "Adam",
-                        fontSize: 39,
-                        fontWeight: FontWeight.bold)),
+                height: 150,
+                width: double.infinity,
+                padding: const EdgeInsets.only(bottom: 7, right: 45),
+                margin: const EdgeInsets.all(40),
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Text("G2-0062",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Montserrat",
+                          fontSize: 39,
+                          fontWeight: FontWeight.bold)),
+                ),
               )
             ],
           ),
