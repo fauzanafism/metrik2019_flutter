@@ -9,5 +9,8 @@ class CountersoalBloc extends Bloc<CountersoalEvent, CountersoalState> {
     on<NextsoalEvent>((event, emit) {
       emit(SoalInitialized(state.noSoal + 1));
     });
+    on<ResetEvent>((event, emit) {
+      emit(CountersoalInitial());
+    });
   }
 }
