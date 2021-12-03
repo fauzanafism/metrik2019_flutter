@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metrik2019_flutter/ui/guidance_page.dart';
-import 'package:metrik2019_flutter/widgets/soal.dart';
+import 'package:metrik2019_flutter/ui/soal.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
 class HomePage extends StatelessWidget {
