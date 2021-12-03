@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<ViewpassBloc>(create: (context) => ViewpassBloc())
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Metrik 2019',
         theme: ThemeData(textTheme: TextTheme()),
         home: LandingPage(),
       ),
