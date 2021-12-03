@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:metrik2019_flutter/bloc/user_bloc.dart';
 import 'package:metrik2019_flutter/bloc/viewpass_bloc.dart';
+import 'package:metrik2019_flutter/repository/auth_services.dart';
 import 'package:metrik2019_flutter/ui/home_page.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
@@ -87,14 +89,24 @@ class LoginPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  GradientButton(
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return HomePage();
-                        }));
-                      },
-                      text: 'Masuk'),
+                  BlocBuilder<UserBloc, UserState>(
+                    builder: (context, state) {
+                      return GradientButton(
+                          onPressed: () async {
+                            context.read<UserBloc>().add(LoginEvent(
+                                await AuthService.signIn(
+                                    idController.text, passController.text)));
+                            (state is UserInitialized)
+                                ? Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                    return HomePage();
+                                  }))
+                                : ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(content: Text('Gagal login')));
+                          },
+                          text: 'Masuk');
+                    },
+                  ),
                 ],
               ),
             ),
