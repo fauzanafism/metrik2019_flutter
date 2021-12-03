@@ -42,7 +42,7 @@ class GuidancePage extends StatelessWidget {
             Spacer(),
             GradientButton(onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return SoalPage();
+                return SoalPage(15);
               }));
             }, text: 'Next'),
             SizedBox(height: 50,)

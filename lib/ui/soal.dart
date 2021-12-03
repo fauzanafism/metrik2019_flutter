@@ -3,6 +3,9 @@ import 'package:metrik2019_flutter/ui/answer_page.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
 class SoalPage extends StatelessWidget {
+  final int jumlahSoal;
+  SoalPage(this.jumlahSoal);
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
