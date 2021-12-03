@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:metrik2019_flutter/bloc/user_bloc.dart';
 import 'package:metrik2019_flutter/bloc/viewpass_bloc.dart';
 import 'ui/landing_page.dart';
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider<UserBloc>(create: (context) => UserBloc()),
         BlocProvider<ViewpassBloc>(create: (context) => ViewpassBloc())
       ],
       child: MaterialApp(
