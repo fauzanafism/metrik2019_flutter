@@ -95,7 +95,7 @@ class LoginPage extends StatelessWidget {
                           onPressed: () async {
                             context.read<UserBloc>().add(LoginEvent(
                                 await AuthService.signIn(
-                                    idController.text, passController.text)));
+                                    idController.text + '@metrik.com', passController.text)));
                             (state is UserInitialized)
                                 ? Navigator.push(context,
                                     MaterialPageRoute(builder: (context) {
