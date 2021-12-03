@@ -9,5 +9,5 @@ abstract class UserEvent extends Equatable {
 }
 
 class LoginEvent extends UserEvent {
-  LoginEvent(User user) : super(user);
+  LoginEvent(User? user) : super(user);
 }
