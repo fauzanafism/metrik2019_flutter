@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.metrik2019_flutter">
+    package="com.zanomaly.metrik19">
    <application
         android:label="metrik2019_flutter"
         android:icon="@mipmap/launcher_icon">

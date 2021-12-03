@@ -1,4 +1,4 @@
-package com.example.metrik2019_flutter
+package com.zanomaly.metrik19
 
 import io.flutter.embedding.android.FlutterActivity
 
