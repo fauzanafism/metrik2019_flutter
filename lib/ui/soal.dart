@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:metrik2019_flutter/bloc/countersoal_bloc.dart';
 import 'package:metrik2019_flutter/ui/answer_page.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
@@ -10,8 +12,8 @@ class SoalPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Tidak diizinkan')));
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text('Tidak diizinkan')));
         return false;
       },
       child: Scaffold(
@@ -29,10 +31,14 @@ class SoalPage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(
-                        "01",
-                        style: whiteTextMont.copyWith(
-                            fontSize: 30, color: Colors.black),
+                      BlocBuilder<CountersoalBloc, CountersoalState>(
+                        builder: (context, state) {
+                          return Text(
+                            state.noSoal.toString(),
+                            style: whiteTextMont.copyWith(
+                                fontSize: 30, color: Colors.black),
+                          );
+                        },
                       ),
                       Spacer(),
                       Material(

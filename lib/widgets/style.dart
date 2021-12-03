@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:metrik2019_flutter/bloc/countersoal_bloc.dart';
 
 ButtonStyle blackButton = ElevatedButton.styleFrom(
     primary: Colors.transparent,
@@ -57,27 +59,42 @@ class OptionButton extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20))),
           onPressed: () {
-            showDialog(context: context, builder: (BuildContext context) {
-              return AlertDialog(
-                title: Text("Peringatan"),
-                content: Text("Pilih '$text' sebagai jawabanmu?"),
-                actions: [
-                  TextButton(onPressed: () {}, child: Text("Iya")),
-                  TextButton(onPressed: () {
-                    Navigator.pop(context);
-                  }, child: Text("Tidak"))
-                ],
-              );
-            });
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text("Peringatan"),
+                    content: Text("Pilih '$text' sebagai jawabanmu?"),
+                    actions: [
+                      SizedBox(
+                        child: BlocBuilder<CountersoalBloc, CountersoalState>(
+                          builder: (context, state) {
+                            return TextButton(
+                                onPressed: () {
+                                  context.read<CountersoalBloc>().add(NextsoalEvent());
+                                  Navigator.pop(context);
+                                }, child: Text("Iya"));
+                          },
+                        ),
+                      ),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text("Tidak"))
+                    ],
+                  );
+                });
           },
           child: Text(
             text,
-            style: whiteTextMont.copyWith(
-                fontSize: 45,
-                color: Colors.black,
-                shadows: [
-                  Shadow(color: Colors.black.withOpacity(0.3), blurRadius: 15, offset: Offset(0,10))
-                ]),
+            style: whiteTextMont
+                .copyWith(fontSize: 45, color: Colors.black, shadows: [
+              Shadow(
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 15,
+                  offset: Offset(0, 10))
+            ]),
           )),
     );
   }
