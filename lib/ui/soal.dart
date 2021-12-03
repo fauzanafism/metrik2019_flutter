@@ -52,15 +52,25 @@ class SoalPage extends StatelessWidget {
                                     title: Text("Peringatan"),
                                     content: Text("Kosongkan jawaban ini?"),
                                     actions: [
-                                      TextButton(
-                                          onPressed: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return AnswerPage();
-                                            }));
-                                          },
-                                          child: Text("Iya")),
+                                      BlocBuilder<CountersoalBloc,
+                                          CountersoalState>(
+                                        builder: (context, state) {
+                                          return TextButton(
+                                              onPressed: () {
+                                                context
+                                                        .read<CountersoalBloc>()
+                                                        .add(NextsoalEvent());
+                                                (state.noSoal == jumlahSoal)
+                                                    ? Navigator.push(context,
+                                                        MaterialPageRoute(
+                                                            builder: (context) {
+                                                        return AnswerPage();
+                                                      }))
+                                                    : Navigator.pop(context);
+                                              },
+                                              child: Text("Iya"));
+                                        },
+                                      ),
                                       TextButton(
                                           onPressed: () {
                                             Navigator.pop(context);
