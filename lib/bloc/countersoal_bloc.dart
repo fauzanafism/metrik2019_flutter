@@ -7,7 +7,7 @@ part 'countersoal_state.dart';
 class CountersoalBloc extends Bloc<CountersoalEvent, CountersoalState> {
   CountersoalBloc() : super(CountersoalInitial()) {
     on<NextsoalEvent>((event, emit) {
-      emit(SoalInitialized(event.noSoal));
+      emit(SoalInitialized(state.noSoal + 1));
     });
   }
 }
