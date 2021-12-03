@@ -51,6 +51,8 @@ class HomePage extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30))),
                       onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('Uji koneksimu disini')));
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
                           return SoalPage(5);
