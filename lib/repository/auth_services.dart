@@ -20,5 +20,8 @@ class AuthService {
     }
   }
 
-  
+  static Future<void> signOut() async {
+    _auth.signOut();
+  }
+
 }
