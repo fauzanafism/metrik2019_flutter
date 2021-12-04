@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:metrik2019_flutter/ui/home_page.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
 class AnswerPage extends StatelessWidget {
@@ -7,8 +6,8 @@ class AnswerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Tidak diizinkan')));
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text('Tidak diizinkan')));
         return false;
       },
       child: Scaffold(
@@ -19,18 +18,19 @@ class AnswerPage extends StatelessWidget {
             children: [
               Text(
                 "Your Answer",
-                style: whiteTextMont.copyWith(color: Colors.black, fontSize: 16),
+                style:
+                    whiteTextMont.copyWith(color: Colors.black, fontSize: 16),
               ),
               Spacer(),
               Container(),
               Spacer(),
               ElevatedButton(
                 onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Jawaban berhasil diinput")));
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return HomePage();
-                  }));
+                  Navigator.popUntil(context, (route) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text("Jawaban berhasil diinput")));
+                    return route.isFirst;
+                  });
                 },
                 child: Text(
                   "SELESAI",
