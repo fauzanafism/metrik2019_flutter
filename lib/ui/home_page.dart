@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                 margin: const EdgeInsets.all(40),
                 child: Align(
                   alignment: Alignment.bottomRight,
-                  child: Text("G2-0062",
+                  child: Text(id,
                       style: whiteTextMont.copyWith(fontSize: 43)),
                 ),
               )
