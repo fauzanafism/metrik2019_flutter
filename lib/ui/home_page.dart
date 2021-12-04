@@ -4,6 +4,8 @@ import 'package:metrik2019_flutter/ui/soal.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
 class HomePage extends StatelessWidget {
+  final String id;
+  HomePage(this.id);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

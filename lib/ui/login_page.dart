@@ -97,9 +97,9 @@ class LoginPage extends StatelessWidget {
                                 await AuthService.signIn(
                                     idController.text + '@metrik.com', passController.text)));
                             (state is UserInitialized)
-                                ? Navigator.push(context,
+                                ? await Navigator.push(context,
                                     MaterialPageRoute(builder: (context) {
-                                    return HomePage();
+                                    return HomePage("G2-0" + idController.text[-3]);
                                   }))
                                 : ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(content: Text('Gagal login')));
