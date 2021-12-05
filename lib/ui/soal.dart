@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:metrik2019_flutter/bloc/countersoal_bloc.dart';
+import 'package:metrik2019_flutter/bloc/user_bloc.dart';
 import 'package:metrik2019_flutter/ui/answer_page.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
@@ -10,6 +12,8 @@ class SoalPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference userAnswer = firestore.collection('user');
     return WillPopScope(
       onWillPop: () async {
         ScaffoldMessenger.of(context)
@@ -54,21 +58,30 @@ class SoalPage extends StatelessWidget {
                                     actions: [
                                       BlocBuilder<CountersoalBloc,
                                           CountersoalState>(
-                                        builder: (context, state) {
-                                          return TextButton(
-                                              onPressed: () {
-                                                context
+                                        builder: (context, soal) {
+                                          return BlocBuilder<UserBloc,
+                                              UserState>(
+                                            builder: (context, user) {
+                                              return TextButton(
+                                                  onPressed: () {
+                                                    userAnswer.add({soal.noSoal: "kosong"});
+                                                    context
                                                         .read<CountersoalBloc>()
                                                         .add(NextsoalEvent());
-                                                (state.noSoal == jumlahSoal)
-                                                    ? Navigator.push(context,
-                                                        MaterialPageRoute(
-                                                            builder: (context) {
-                                                        return AnswerPage();
-                                                      }))
-                                                    : Navigator.pop(context);
-                                              },
-                                              child: Text("Iya"));
+                                                    (soal.noSoal == jumlahSoal)
+                                                        ? Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) {
+                                                            return AnswerPage();
+                                                          }))
+                                                        : Navigator.pop(
+                                                            context);
+                                                  },
+                                                  child: Text("Iya"));
+                                            },
+                                          );
                                         },
                                       ),
                                       TextButton(
