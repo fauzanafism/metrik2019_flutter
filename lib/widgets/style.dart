@@ -77,7 +77,7 @@ class OptionButton extends StatelessWidget {
                               builder: (context, user) {
                                 return TextButton(
                                     onPressed: () {
-                                      userAnswer.add({soal.noSoal: text});
+                                      userAnswer.doc(user.user!.uid).set({soal.noSoal: text});
                                       context
                                           .read<CountersoalBloc>()
                                           .add(NextsoalEvent());

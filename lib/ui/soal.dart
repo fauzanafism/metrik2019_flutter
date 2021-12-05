@@ -68,7 +68,7 @@ class SoalPage extends StatelessWidget {
                                                   builder: (context, user) {
                                                     return TextButton(
                                                         onPressed: () {
-                                                          userAnswer.add({
+                                                          userAnswer.doc(user.user!.uid).set({
                                                             soal.noSoal:
                                                                 "kosong"
                                                           });
