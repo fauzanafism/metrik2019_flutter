@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:metrik2019_flutter/bloc/countersoal_bloc.dart';
+import 'package:metrik2019_flutter/bloc/user_bloc.dart';
 
 ButtonStyle blackButton = ElevatedButton.styleFrom(
     primary: Colors.transparent,
@@ -47,6 +49,8 @@ class OptionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference userAnswer = firestore.collection("user");
     return Container(
       width: 110,
       height: 110,
@@ -68,12 +72,20 @@ class OptionButton extends StatelessWidget {
                     actions: [
                       SizedBox(
                         child: BlocBuilder<CountersoalBloc, CountersoalState>(
-                          builder: (context, state) {
-                            return TextButton(
-                                onPressed: () {
-                                  context.read<CountersoalBloc>().add(NextsoalEvent());
-                                  Navigator.pop(context);
-                                }, child: Text("Iya"));
+                          builder: (context, soal) {
+                            return BlocBuilder<UserBloc, UserState>(
+                              builder: (context, user) {
+                                return TextButton(
+                                    onPressed: () {
+                                      userAnswer.add({soal.noSoal: text});
+                                      context
+                                          .read<CountersoalBloc>()
+                                          .add(NextsoalEvent());
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text("Iya"));
+                              },
+                            );
                           },
                         ),
                       ),
