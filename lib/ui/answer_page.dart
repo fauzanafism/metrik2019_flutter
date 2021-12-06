@@ -32,25 +32,35 @@ class AnswerPage extends StatelessWidget {
                 Container(
                   child: BlocBuilder<UserBloc, UserState>(
                     builder: (context, user) {
-                      return Column(
-                        children: [
+                      return SingleChildScrollView(
+                        child: 
                           StreamBuilder<DocumentSnapshot>(
-                              stream: userAnswer.doc(user.user!.uid).snapshots(),
+                              stream:
+                                  userAnswer.doc(user.user!.uid).snapshots(),
                               builder: (_, snapshot) {
                                 if (snapshot.hasData) {
-                                  Map<String, dynamic> data = snapshot.data!
+                                  Map<String, dynamic> snapdata = snapshot.data!
                                       .data() as Map<String, dynamic>;
-                                  return Column(
+                                  return Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      
-                                        NumAnswer(1, data['1'])
+                                      Column(
+                                        children: [for (int i = 1; i<11 ;i++) 
+                                          NumAnswer(i, snapdata[i.toString()])
+                                        ]
+                                      ),
+                                      Column(
+                                        children: [for (int i = 11; i<16 ;i++) 
+                                          NumAnswer(i, snapdata[i.toString()])
+                                        ]
+                                      ),
                                     ],
                                   );
                                 } else {
                                   return Text("Loading");
                                 }
                               }),
-                        ],
+                        
                       );
                     },
                   ),
