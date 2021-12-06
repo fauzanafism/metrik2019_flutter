@@ -123,24 +123,26 @@ class NumAnswer extends StatelessWidget {
     return BlocBuilder<UserBloc, UserState>(
       builder: (context, user) {
         return Container(
-          width: 80,
-          height: 40,
+          width: 90,
+          height: 50,
           child: Row(
             children: [
               Container(
-                width: 30,
-                height: 30,
+                width: 40,
+                height: 40,
                 decoration: BoxDecoration(
                     color: Colors.white, borderRadius: BorderRadius.circular(10)),
-                child: Text(
-                  num.toString(),
-                  style: whiteTextMont.copyWith(color: Colors.black),
+                child: Center(
+                  child: Text(
+                    num.toString(),
+                    style: whiteTextMont.copyWith(color: Colors.black),
+                  ),
                 ),
               ),
               Container(
                 margin: EdgeInsets.all(5),
-                width: 30,
-                height: 30,
+                width: 40,
+                height: 40,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [Color(0xFF181335), Color(0xFFBD0446)],
@@ -148,9 +150,11 @@ class NumAnswer extends StatelessWidget {
                       end: FractionalOffset.bottomRight,
                     ),
                     borderRadius: BorderRadius.circular(10)),
-                child: Text(
-                  ans,
-                  style: whiteTextMont,
+                child: Center(
+                  child: Text(
+                    ans,
+                    style: whiteTextMont,
+                  ),
                 ),
               ),
             ],
