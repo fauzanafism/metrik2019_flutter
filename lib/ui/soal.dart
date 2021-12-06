@@ -70,7 +70,7 @@ class SoalPage extends StatelessWidget {
                                                         onPressed: () {
                                                           userAnswer.doc(user.user!.uid).update({
                                                             soal.noSoal.toString():
-                                                                "kosong"
+                                                                ""
                                                           });
                                                           context
                                                               .read<
