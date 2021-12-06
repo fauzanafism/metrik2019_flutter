@@ -77,7 +77,9 @@ class OptionButton extends StatelessWidget {
                               builder: (context, user) {
                                 return TextButton(
                                     onPressed: () {
-                                      userAnswer.doc(user.user!.uid).set({soal.noSoal: text});
+                                      userAnswer
+                                          .doc(user.user!.uid)
+                                          .set({soal.noSoal: text});
                                       context
                                           .read<CountersoalBloc>()
                                           .add(NextsoalEvent());
@@ -108,6 +110,48 @@ class OptionButton extends StatelessWidget {
                   offset: Offset(0, 10))
             ]),
           )),
+    );
+  }
+}
+
+class NumAnswer extends StatelessWidget {
+  final int num;
+  final String ans;
+  NumAnswer(this.num, this.ans);
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<UserBloc, UserState>(
+      builder: (context, user) {
+        return Row(
+          children: [
+            Container(
+              width: 30,
+              height: 30,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
+              child: Text(
+                num.toString(),
+                style: whiteTextMont.copyWith(color: Colors.black),
+              ),
+            ),
+            Container(
+              width: 30,
+              height: 30,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Color(0xFF181335), Color(0xFFBD0446)],
+                    begin: FractionalOffset.topLeft,
+                    end: FractionalOffset.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(10)),
+              child: Text(
+                ans,
+                style: whiteTextMont,
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }
