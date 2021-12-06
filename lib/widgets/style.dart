@@ -79,7 +79,7 @@ class OptionButton extends StatelessWidget {
                                     onPressed: () {
                                       userAnswer
                                           .doc(user.user!.uid)
-                                          .set({soal.noSoal: text});
+                                          .update({soal.noSoal.toString(): text});
                                       context
                                           .read<CountersoalBloc>()
                                           .add(NextsoalEvent());
@@ -122,34 +122,39 @@ class NumAnswer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<UserBloc, UserState>(
       builder: (context, user) {
-        return Row(
-          children: [
-            Container(
-              width: 30,
-              height: 30,
-              decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
-              child: Text(
-                num.toString(),
-                style: whiteTextMont.copyWith(color: Colors.black),
+        return Container(
+          width: 80,
+          height: 40,
+          child: Row(
+            children: [
+              Container(
+                width: 30,
+                height: 30,
+                decoration: BoxDecoration(
+                    color: Colors.white, borderRadius: BorderRadius.circular(10)),
+                child: Text(
+                  num.toString(),
+                  style: whiteTextMont.copyWith(color: Colors.black),
+                ),
               ),
-            ),
-            Container(
-              width: 30,
-              height: 30,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Color(0xFF181335), Color(0xFFBD0446)],
-                    begin: FractionalOffset.topLeft,
-                    end: FractionalOffset.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Text(
-                ans,
-                style: whiteTextMont,
+              Container(
+                margin: EdgeInsets.all(5),
+                width: 30,
+                height: 30,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Color(0xFF181335), Color(0xFFBD0446)],
+                      begin: FractionalOffset.topLeft,
+                      end: FractionalOffset.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Text(
+                  ans,
+                  style: whiteTextMont,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         );
       },
     );
