@@ -1,9 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:metrik2019_flutter/bloc/user_bloc.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
 class AnswerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference userAnswer = firestore.collection('user');
     return WillPopScope(
       onWillPop: () async {
         ScaffoldMessenger.of(context)
@@ -22,7 +27,32 @@ class AnswerPage extends StatelessWidget {
                     whiteTextMont.copyWith(color: Colors.black, fontSize: 16),
               ),
               Spacer(),
-              Container(),
+              Container(
+                child: BlocBuilder<UserBloc, UserState>(
+                  builder: (context, user) {
+                    return Column(
+                      children: [
+                        StreamBuilder<DocumentSnapshot>(
+                            stream: userAnswer.doc(user.user!.uid).snapshots(),
+                            builder: (_, snapshot) {
+                              if (snapshot.hasData) {
+                                Map<String, dynamic> data = snapshot.data!
+                                    .data() as Map<String, dynamic>;
+                                return Column(
+                                  children: [
+                                    for (int i = 1; i < 15; 1)
+                                      NumAnswer(i, data[i])
+                                  ],
+                                );
+                              } else {
+                                return Text("Loading");
+                              }
+                            }),
+                      ],
+                    );
+                  },
+                ),
+              ),
               Spacer(),
               ElevatedButton(
                 onPressed: () {
@@ -38,7 +68,8 @@ class AnswerPage extends StatelessWidget {
                 ),
                 style: blackButton.copyWith(
                     backgroundColor: MaterialStateProperty.all(Colors.white)),
-              )
+              ),
+              Spacer()
             ],
           ),
         ),
