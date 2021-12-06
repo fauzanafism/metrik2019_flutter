@@ -33,11 +33,15 @@ class SoalPage extends StatelessWidget {
               builder: (context, soal) {
                 return (soal.noSoal == jumlahSoal + 1)
                     ? Center(
-                        child: GradientButton(text: "SELESAI", onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) {
-                            return AnswerPage();
-                          }));
-                        },),
+                        child: GradientButton(
+                          text: "SELESAI",
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return AnswerPage();
+                            }));
+                          },
+                        ),
                       )
                     : Container(
                         margin: EdgeInsets.fromLTRB(30, 80, 30, 50),
@@ -68,15 +72,24 @@ class SoalPage extends StatelessWidget {
                                                   builder: (context, user) {
                                                     return TextButton(
                                                         onPressed: () {
-                                                          userAnswer.doc(user.user!.uid).update({
-                                                            soal.noSoal.toString():
-                                                                ""
+                                                          userAnswer
+                                                              .doc(user
+                                                                  .user!.uid)
+                                                              .update({
+                                                            soal.noSoal
+                                                                .toString(): ""
                                                           });
                                                           context
                                                               .read<
                                                                   CountersoalBloc>()
                                                               .add(
                                                                   NextsoalEvent());
+
+                                                          ScaffoldMessenger.of(
+                                                                  context)
+                                                              .showSnackBar(SnackBar(
+                                                                  content: Text(
+                                                                      "Jawaban berhasil diinput")));
                                                           Navigator.pop(
                                                               context);
                                                         },

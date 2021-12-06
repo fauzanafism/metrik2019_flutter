@@ -77,12 +77,16 @@ class OptionButton extends StatelessWidget {
                               builder: (context, user) {
                                 return TextButton(
                                     onPressed: () {
-                                      userAnswer
-                                          .doc(user.user!.uid)
-                                          .update({soal.noSoal.toString(): text});
+                                      userAnswer.doc(user.user!.uid).update(
+                                          {soal.noSoal.toString(): text});
                                       context
                                           .read<CountersoalBloc>()
                                           .add(NextsoalEvent());
+
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(SnackBar(
+                                              content: Text(
+                                                  "Jawaban berhasil diinput")));
                                       Navigator.pop(context);
                                     },
                                     child: Text("Iya"));
@@ -131,7 +135,8 @@ class NumAnswer extends StatelessWidget {
                 width: 40,
                 height: 40,
                 decoration: BoxDecoration(
-                    color: Colors.white, borderRadius: BorderRadius.circular(10)),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10)),
                 child: Center(
                   child: Text(
                     num.toString(),
