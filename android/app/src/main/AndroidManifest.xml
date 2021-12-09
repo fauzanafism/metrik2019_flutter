@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zanomaly.metrik19">
    <application
-        android:label="metrik2019_flutter"
+        android:label="Metrik 2019"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
