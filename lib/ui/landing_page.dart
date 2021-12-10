@@ -37,26 +37,24 @@ class LandingPage extends StatelessWidget {
         ),
         Center(
           child: Container(
-                margin: const EdgeInsets.only(top: 100),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        primary: mainColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30))),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                            return LoginPage();
-                      }));
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        "START",
-                        style: whiteTextMont.copyWith(color: Colors.black),
-                      ),
-                    )),
-              
+            margin: const EdgeInsets.only(top: 100),
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: mainColor,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30))),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return LoginPage();
+                  }));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    "START",
+                    style: whiteTextMont.copyWith(color: Colors.black),
+                  ),
+                )),
           ),
         )
       ],
