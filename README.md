@@ -2,9 +2,7 @@
 
 A revamped Metrik 2019 app built with Flutter.
 
-<img
-src=“ss\landing.png”
->
+<img src=“ss\landing.png”>
 
 <img
 src=“https://raw.githubusercontent.com/fauzanafism/metrik2019_flutter/master/ss/login.png”
