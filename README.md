@@ -3,7 +3,7 @@
 A revamped Metrik 2019 app built with Flutter.
 
 <img
-src=“\ss\landing.png”
+src=“ss\landing.png”
 >
 
 <img
