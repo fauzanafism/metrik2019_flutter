@@ -93,9 +93,12 @@ class LoginPage extends StatelessWidget {
                     builder: (context, state) {
                       return GradientButton(
                           onPressed: () async {
-                            context.read<UserBloc>().add(LoginEvent(
-                                await AuthService.signIn(
-                                    idController.text + '@metrik.com', passController.text)));
+                            await AuthService.signIn(
+                                    idController.text + '@metrik.com',
+                                    passController.text)
+                                .then((value) => context
+                                    .read<UserBloc>()
+                                    .add(LoginEvent(value)));
                             (state is UserInitialized)
                                 ? Navigator.push(context,
                                     MaterialPageRoute(builder: (context) {
