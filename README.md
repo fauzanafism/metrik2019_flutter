@@ -1,6 +1,12 @@
-# metrik2019_flutter
+# Metrik 2019 Fluter
 
 A revamped Metrik 2019 app built with Flutter.
+
+## Technical specs
+- Database: firebase
+- State management: flutter_bloc
+
+## Screenshots
 
 <img src=ss\landing.png width="400px" height="auto">
 <img src=ss\login.png width="400px" height="auto">
