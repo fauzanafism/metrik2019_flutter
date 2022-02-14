@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../presentation/bloc/countersoal_bloc.dart';
-import '../presentation/bloc/user_bloc.dart';
+import '../bloc/countersoal_bloc.dart';
+import '../bloc/user_bloc.dart';
 
 ButtonStyle blackButton = ElevatedButton.styleFrom(
     primary: Colors.transparent,

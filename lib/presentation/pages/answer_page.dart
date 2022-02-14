@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:metrik2019_flutter/presentation/bloc/countersoal_bloc.dart';
 import 'package:metrik2019_flutter/presentation/bloc/user_bloc.dart';
 
-import 'package:metrik2019_flutter/widgets/style.dart';
+import 'package:metrik2019_flutter/presentation/widgets/style.dart';
 
 
 class AnswerPage extends StatelessWidget {

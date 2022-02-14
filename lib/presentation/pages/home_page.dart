@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:metrik2019_flutter/presentation/pages/guidance_page.dart';
 import 'package:metrik2019_flutter/presentation/pages/soal.dart';
 import 'package:metrik2019_flutter/repository/auth_services.dart';
-import 'package:metrik2019_flutter/widgets/style.dart';
+import 'package:metrik2019_flutter/presentation/widgets/style.dart';
 
 class HomePage extends StatelessWidget {
   final String id;

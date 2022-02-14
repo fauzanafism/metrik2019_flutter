@@ -4,7 +4,7 @@ import 'package:metrik2019_flutter/presentation/bloc/user_bloc.dart';
 import 'package:metrik2019_flutter/presentation/bloc/viewpass_bloc.dart';
 import 'package:metrik2019_flutter/presentation/pages/home_page.dart';
 import 'package:metrik2019_flutter/repository/auth_services.dart';
-import 'package:metrik2019_flutter/widgets/style.dart';
+import 'package:metrik2019_flutter/presentation/widgets/style.dart';
 
 
 class LoginPage extends StatelessWidget {

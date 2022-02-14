@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metrik2019_flutter/presentation/pages/soal.dart';
-import 'package:metrik2019_flutter/widgets/style.dart';
+import 'package:metrik2019_flutter/presentation/widgets/style.dart';
 
 class GuidancePage extends StatelessWidget {
   @override
