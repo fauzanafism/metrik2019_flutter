@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:metrik2019_flutter/bloc/countersoal_bloc.dart';
-import 'package:metrik2019_flutter/bloc/user_bloc.dart';
 import 'package:metrik2019_flutter/ui/answer_page.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
+
+import '../presentation/bloc/countersoal_bloc.dart';
+import '../presentation/bloc/user_bloc.dart';
 
 class SoalPage extends StatelessWidget {
   final int jumlahSoal;
