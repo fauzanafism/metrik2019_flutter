@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:metrik2019_flutter/presentation/bloc/countersoal_bloc.dart';
 import 'package:metrik2019_flutter/presentation/bloc/viewpass_bloc.dart';
 import 'presentation/bloc/user_bloc.dart';
-import 'ui/landing_page.dart';
+import 'presentation/pages/landing_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

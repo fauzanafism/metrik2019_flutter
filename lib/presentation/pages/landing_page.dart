@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:metrik2019_flutter/ui/login_page.dart';
+import 'package:metrik2019_flutter/presentation/pages/login_page.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
 class LandingPage extends StatelessWidget {

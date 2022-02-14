@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:metrik2019_flutter/presentation/bloc/user_bloc.dart';
+import 'package:metrik2019_flutter/presentation/bloc/viewpass_bloc.dart';
+import 'package:metrik2019_flutter/presentation/pages/home_page.dart';
 import 'package:metrik2019_flutter/repository/auth_services.dart';
-import 'package:metrik2019_flutter/ui/home_page.dart';
 import 'package:metrik2019_flutter/widgets/style.dart';
 
-import '../presentation/bloc/user_bloc.dart';
-import '../presentation/bloc/viewpass_bloc.dart';
 
 class LoginPage extends StatelessWidget {
   TextEditingController idController = TextEditingController();
