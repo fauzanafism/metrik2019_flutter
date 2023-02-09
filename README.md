@@ -1,4 +1,4 @@
-# Metrik 2019 Fluter
+# Metrik 2019 Flutter
 
 A revamped Metrik 2019 app built with Flutter.
 
